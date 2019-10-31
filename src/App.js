@@ -1,9 +1,25 @@
 import React from 'react';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
 
+import {Home, Admin} from './routes'
 
-function App() {
+const App = () => {
+
   return (
-    'Hello, World'
+    <Router>
+      <Switch>
+        <Route path="/" exact>
+          <Home/>
+        </Route>
+        <Route path="/admin">
+          <Admin/>
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
